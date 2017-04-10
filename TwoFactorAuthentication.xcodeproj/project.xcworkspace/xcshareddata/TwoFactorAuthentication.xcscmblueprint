@@ -9,8 +9,8 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "79A43A3D-E7A6-4E97-9E60-E337F7BAD9AF",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53" : "TwoFactorAuthentication\/CryptoSwift\/",
-    "A303BE6A03244C9A36132ED05A82A4AB2F90DC96" : "TwoFactorAuthentication\/"
+    "C3D8ED1CB28D809ADCE2C0DE74935E8A502ACD53" : "TwoFactorAuthenticationGordon\/CryptoSwift\/",
+    "A303BE6A03244C9A36132ED05A82A4AB2F90DC96" : "TwoFactorAuthenticationGordon\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TwoFactorAuthentication",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

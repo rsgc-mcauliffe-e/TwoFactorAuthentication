@@ -74,6 +74,7 @@
 		815D9C9C1E9BBBEF00D6DE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		815D9C9E1E9BBBEF00D6DE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		815D9CA41E9BBC8000D6DE45 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		AA1914D21E9BC0E300E07BAC /* algorithmTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = algorithmTests.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 		815D9C861E9BBBEF00D6DE45 = {
 			isa = PBXGroup;
 			children = (
+				AA1914D21E9BC0E300E07BAC /* algorithmTests.playground */,
 				815D9CA41E9BBC8000D6DE45 /* CryptoSwift.xcodeproj */,
 				815D9C911E9BBBEF00D6DE45 /* TwoFactorAuthentication */,
 				815D9C901E9BBBEF00D6DE45 /* Products */,
