@@ -14,6 +14,7 @@
 		815D9C9D1E9BBBEF00D6DE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815D9C9B1E9BBBEF00D6DE45 /* LaunchScreen.storyboard */; };
 		815D9CAD1E9BBCC700D6DE45 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815D9CAA1E9BBC8000D6DE45 /* CryptoSwift.framework */; };
 		815D9CAE1E9BBCC700D6DE45 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 815D9CAA1E9BBC8000D6DE45 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		815D9CB31E9BBE2C00D6DE45 /* CryptoSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 815D9CAA1E9BBC8000D6DE45 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,16 @@
 				815D9CAE1E9BBCC700D6DE45 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		815D9CB21E9BBE1C00D6DE45 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				815D9CB31E9BBE2C00D6DE45 /* CryptoSwift.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -127,6 +138,7 @@
 				815D9C8C1E9BBBEF00D6DE45 /* Frameworks */,
 				815D9C8D1E9BBBEF00D6DE45 /* Resources */,
 				815D9CB11E9BBCC700D6DE45 /* Embed Frameworks */,
+				815D9CB21E9BBE1C00D6DE45 /* CopyFiles */,
 			);
 			buildRules = (
 			);
