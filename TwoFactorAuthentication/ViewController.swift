@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  TwoFactorAuthentication
 //
-//  Created by Russell Gordon on 4/10/17.
-//  Copyright © 2017 Russell Gordon. All rights reserved.
+//  Created by   on
+//  Copyright © 2017  . All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         print("about to load view")
-        var message = "Hey, did this work?"
+        let message = "Hey, did this work?"
         
         print(message.md5())
         

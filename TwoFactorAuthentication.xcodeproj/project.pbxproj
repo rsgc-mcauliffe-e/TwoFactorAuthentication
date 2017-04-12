@@ -15,6 +15,7 @@
 		815D9CAD1E9BBCC700D6DE45 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815D9CAA1E9BBC8000D6DE45 /* CryptoSwift.framework */; };
 		815D9CAE1E9BBCC700D6DE45 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 815D9CAA1E9BBC8000D6DE45 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		815D9CB31E9BBE2C00D6DE45 /* CryptoSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 815D9CAA1E9BBC8000D6DE45 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA1ED1C21E9EA8C300AB193C /* Independent_Study_Project_-_Checkpoint_1.docx in Resources */ = {isa = PBXBuildFile; fileRef = AA1ED1C11E9EA8C300AB193C /* Independent_Study_Project_-_Checkpoint_1.docx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,13 +69,14 @@
 /* Begin PBXFileReference section */
 		815D9C8F1E9BBBEF00D6DE45 /* TwoFactorAuthentication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoFactorAuthentication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		815D9C921E9BBBEF00D6DE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		815D9C941E9BBBEF00D6DE45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		815D9C941E9BBBEF00D6DE45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		815D9C971E9BBBEF00D6DE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		815D9C991E9BBBEF00D6DE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		815D9C9C1E9BBBEF00D6DE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		815D9C9E1E9BBBEF00D6DE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		815D9CA41E9BBC8000D6DE45 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		AA1914D21E9BC0E300E07BAC /* algorithmTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = algorithmTests.playground; sourceTree = "<group>"; };
+		AA1ED1C11E9EA8C300AB193C /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		815D9C861E9BBBEF00D6DE45 = {
 			isa = PBXGroup;
 			children = (
+				AA1ED1C11E9EA8C300AB193C /* Independent_Study_Project_-_Checkpoint_1.docx */,
 				AA1914D21E9BC0E300E07BAC /* algorithmTests.playground */,
 				815D9CA41E9BBC8000D6DE45 /* CryptoSwift.xcodeproj */,
 				815D9C911E9BBBEF00D6DE45 /* TwoFactorAuthentication */,
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1ED1C21E9EA8C300AB193C /* Independent_Study_Project_-_Checkpoint_1.docx in Resources */,
 				815D9C9D1E9BBBEF00D6DE45 /* LaunchScreen.storyboard in Resources */,
 				815D9C9A1E9BBBEF00D6DE45 /* Assets.xcassets in Resources */,
 				815D9C981E9BBBEF00D6DE45 /* Main.storyboard in Resources */,
