@@ -75,6 +75,7 @@
 		815D9C9C1E9BBBEF00D6DE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		815D9C9E1E9BBBEF00D6DE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		815D9CA41E9BBC8000D6DE45 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		AA02E5F21EA92CD70017DD77 /* Grade11ComputerScienceISP.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Grade11ComputerScienceISP.docx; sourceTree = "<group>"; };
 		AA1914D21E9BC0E300E07BAC /* algorithmTests.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = algorithmTests.playground; sourceTree = "<group>"; };
 		AA1ED1C11E9EA8C300AB193C /* Independent_Study_Project_-_Checkpoint_1.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Independent_Study_Project_-_Checkpoint_1.docx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +100,7 @@
 				815D9CA41E9BBC8000D6DE45 /* CryptoSwift.xcodeproj */,
 				815D9C911E9BBBEF00D6DE45 /* TwoFactorAuthentication */,
 				815D9C901E9BBBEF00D6DE45 /* Products */,
+				AA02E5F21EA92CD70017DD77 /* Grade11ComputerScienceISP.docx */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,7 +169,7 @@
 				TargetAttributes = {
 					815D9C8E1E9BBBEF00D6DE45 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = U2ZN2W2UQJ;
+						DevelopmentTeam = 6FXYC28T99;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -365,7 +367,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U2ZN2W2UQJ;
+				DEVELOPMENT_TEAM = 6FXYC28T99;
 				INFOPLIST_FILE = TwoFactorAuthentication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.on.rsgc.TwoFactorAuthentication;
@@ -379,7 +381,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U2ZN2W2UQJ;
+				DEVELOPMENT_TEAM = 6FXYC28T99;
 				INFOPLIST_FILE = TwoFactorAuthentication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.on.rsgc.TwoFactorAuthentication;

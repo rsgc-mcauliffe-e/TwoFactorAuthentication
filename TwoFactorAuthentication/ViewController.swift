@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         let message = "Hey, did this work?"
         
         print(message.md5())
+		
         
     }
 
