@@ -41,9 +41,6 @@ extension String {
 	}
 }
 
-//remove spaces from key. spaces are provided by 2fa services to improve readability
-key = key.trimmingCharacters(in: .whitespaces)
-
 //secret keys are often provided in lower case to make it easier for a human to read & differentiate between characters. Unfortunately, proper base32 has no lower case, so we must make all characters uppercase
 
 key = key.uppercased()
