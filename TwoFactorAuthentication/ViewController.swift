@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         print("about to load view")
         let message = "Hey, did this work?"
         
-        print(message.md5())
+        print(message.sha1())
 		
         
     }

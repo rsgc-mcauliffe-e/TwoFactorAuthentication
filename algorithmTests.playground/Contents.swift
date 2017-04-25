@@ -1,3 +1,4 @@
+
 import UIKit
 import CryptoSwift
 
@@ -8,6 +9,8 @@ var decodedBase32 = Array<UInt8>()
 
 //shared secret key provided by 2FA service
 var key = "OK33YZEDPRGGVHVGVUHDCIAHHEVPBIIU"
+let time = Int(Date().timeIntervalSince1970 * 1000)/30
+
 
 extension String {
 	
@@ -20,21 +23,16 @@ extension String {
 		//only return a result if the string is exactly 8 characters in length
 		if self.characters.count / 8 == 1{
 			
-			//initialize variable to keep track of position in string
-			var bitPosition = UInt8()
-			
 			//go through the string, LSB first, adding a power of 2 appropriate to the bit position each time
-			for bit in self.characters.reversed() {
+			for (index, bit) in self.characters.reversed().enumerated() {
+				
 				
 				//only add the power of 2 if the bit is a 1
 				if bit == "1" {
 					
 					//ensure power is casted to a UInt8 as the pow function returns a double
-					integerValue += UInt8(round(pow(2.0, Double(bitPosition))))
+					integerValue += UInt8(round(pow(2, Double(index))))
 				}
-				
-				//increase bit position by one after each iteration
-				bitPosition += 1
 			}
 		}
 		
@@ -43,7 +41,11 @@ extension String {
 	}
 }
 
+//remove spaces from key. spaces are provided by 2fa services to improve readability
+key = key.trimmingCharacters(in: .whitespaces)
+
 //secret keys are often provided in lower case to make it easier for a human to read & differentiate between characters. Unfortunately, proper base32 has no lower case, so we must make all characters uppercase
+
 key = key.uppercased()
 
 //take the characters in the base 32 string, convert to a 5 bit binary value and combine them all into a binary string
@@ -54,21 +56,18 @@ for digit in key.characters {
 //now confirm that the length of the string is divisible by 8 (otherwise proper base 32 conversion will not work)
 if binaryString.characters.count % 8 == 0 {
 	
-	//create temporary variables that mark how many bits and bytes have been iterated in the for loop
-	var iterationPositionInString = 0
+	//create temporary variables that mark how many bytes have been iterated in the for loop
 	var currentByte = 0
 	
 	//separates binary string into 8 bit binary string chunks
-	for bit in binaryString.characters {
+	for (index, bit) in binaryString.characters.enumerated() {
 		
 		//add current character in string to array at specified position
 		base32BinaryByteStrings[currentByte].append(bit)
 		
-		//increase iteration marker by one
-		iterationPositionInString += 1
 		
 		//if a full byte has been filled and there are still bytes left, add an element to the array
-		if iterationPositionInString % 8 == 0 && iterationPositionInString != binaryString.characters.count{
+		if index % 8 == 0 && index != binaryString.characters.count{
 			currentByte += 1
 			base32BinaryByteStrings += [""]
 		}
@@ -84,3 +83,4 @@ for byteChunk in base32BinaryByteStrings {
 
 //hash array (array must be of type Array<UInt8> to be successful
 let keyHash = decodedBase32.sha1()
+print(keyHash)
