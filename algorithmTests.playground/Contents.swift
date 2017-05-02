@@ -94,9 +94,10 @@ for byteChunk in base32BinaryByteStrings {
 }
 
 for character in timeString.characters{
-	time.append(UInt8(String(character))!)
+	time.append(UInt8(String(character))!)//force unwrap character in unix time string to a UInt8
 }
 
 //probing how to complete HMAC operation
 print(try HMAC(key: time, variant: .sha1).authenticate(decodedBase32))
+
 
