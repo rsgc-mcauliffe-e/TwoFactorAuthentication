@@ -6,10 +6,11 @@ var base32Convert : [Character:String] = ["A" : "00000", "B" : "00001", "C" : "0
 var binaryString = String()
 var base32BinaryByteStrings : [String] = [""]
 var decodedBase32 = Array<UInt8>()
+var key = String()
+var time = Array<UInt8>()
 
-//shared secret key provided by 2FA service
-var key = "OK33YZEDPRGGVHVGVUHDCIAHHEVPBIIU"
-let time = Int(Date().timeIntervalSince1970 * 1000)/30
+//get UNIX time/30 for the external input to the HMAC operation
+let timeString = String(Int(Date().timeIntervalSince1970)/30)
 
 
 extension String {
@@ -40,6 +41,20 @@ extension String {
 		return integerValue
 	}
 }
+
+//user input for shared secret key provided by 2FA service
+key = "HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ"
+
+/*while key == "" {
+print("ENTER SHARED SECRET BELOW:") //prompts the user for the 32 bit key
+
+var input = readLine()
+if let notNilInput = input {
+notNilInput.characters.count % 16 == 0 ? key = notNilInput : print("ERROR: IMPROPER INPUT") //determines if the input is of appropriate length and alerts the user of errors
+} else {
+print("ERROR: IMPROPER INPUT") //alerts user of improperly inputed shared key
+}
+}*/
 
 //secret keys are often provided in lower case to make it easier for a human to read & differentiate between characters. Unfortunately, proper base32 has no lower case, so we must make all characters uppercase
 
@@ -78,6 +93,10 @@ for byteChunk in base32BinaryByteStrings {
 	decodedBase32.append(byteChunk.binaryToInteger())
 }
 
-//hash array (array must be of type Array<UInt8> to be successful
-let keyHash = decodedBase32.sha1()
-print(keyHash)
+for character in timeString.characters{
+	time.append(UInt8(String(character))!)
+}
+
+//probing how to complete HMAC operation
+print(try HMAC(key: time, variant: .sha1).authenticate(decodedBase32))
+
