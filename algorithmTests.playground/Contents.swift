@@ -2,17 +2,6 @@
 import UIKit
 import CryptoSwift
 
-var base32Convert : [Character:String] = ["A" : "00000", "B" : "00001", "C" : "00010", "D" : "00011", "E" : "00100", "F" : "00101", "G" : "00110", "H" : "00111", "I" : "01000", "J" : "01001", "K" : "01010", "L" : "01011", "M" : "01100", "N" : "01101", "O" : "01110", "P" : "01111", "Q" : "10000", "R" : "10001", "S" : "10010", "T" : "10011", "U" : "10100", "V" : "10101", "W" : "10110", "X" : "10111", "Y" : "11000", "Z" : "11001", "2" : "11010", "3" : "11011", "4" : "11100", "5" : "11101", "6" : "11110", "7" : "11111" ]
-var binaryString = String()
-var base32BinaryByteStrings : [String] = [""]
-var decodedBase32 = Array<UInt8>()
-var key = String()
-var time = Array<UInt8>()
-
-//get UNIX time/30 for the external input to the HMAC operation
-let timeString = String(Int(Date().timeIntervalSince1970)/30)
-
-
 extension String {
 	
 	//new function added to String class that converts 8 digit long binary strings to unsigned 8 bit integers
@@ -42,8 +31,28 @@ extension String {
 	}
 }
 
+extension UInt64 {
+	public func integerTo64BitBinary() -> String {
+		var result = String(self, radix: 2)
+		for _ in 1...(64-result.characters.count) {
+			result = "0" + result
+		}
+		return result
+	}
+}
+
+var base32Convert : [Character:String] = ["A" : "00000", "B" : "00001", "C" : "00010", "D" : "00011", "E" : "00100", "F" : "00101", "G" : "00110", "H" : "00111", "I" : "01000", "J" : "01001", "K" : "01010", "L" : "01011", "M" : "01100", "N" : "01101", "O" : "01110", "P" : "01111", "Q" : "10000", "R" : "10001", "S" : "10010", "T" : "10011", "U" : "10100", "V" : "10101", "W" : "10110", "X" : "10111", "Y" : "11000", "Z" : "11001", "2" : "11010", "3" : "11011", "4" : "11100", "5" : "11101", "6" : "11110", "7" : "11111" ]
+var binaryString = String()
+var base32BinaryByteStrings : [String] = [""]
+var decodedBase32 = Array<UInt8>()
+var inputKey = String()
+var timeHMACInput = Array<UInt8>()
+
+//get UNIX time/30 for the external input to the HMAC operation
+var timeString = UInt64((Date().timeIntervalSince1970)/30)
+
 //user input for shared secret key provided by 2FA service
-key = "HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ"
+inputKey = "HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ"
 
 /*while key == "" {
 print("ENTER SHARED SECRET BELOW:") //prompts the user for the 32 bit key
@@ -58,10 +67,10 @@ print("ERROR: IMPROPER INPUT") //alerts user of improperly inputed shared key
 
 //secret keys are often provided in lower case to make it easier for a human to read & differentiate between characters. Unfortunately, proper base32 has no lower case, so we must make all characters uppercase
 
-key = key.uppercased()
+inputKey = inputKey.uppercased()
 
 //take the characters in the base 32 string, convert to a 5 bit binary value and combine them all into a binary string
-for digit in key.characters {
+for digit in inputKey.characters {
 	binaryString.append(base32Convert[digit]!)
 }
 
@@ -93,11 +102,30 @@ for byteChunk in base32BinaryByteStrings {
 	decodedBase32.append(byteChunk.binaryToInteger())
 }
 
-for character in timeString.characters{
-	time.append(UInt8(String(character))!)//force unwrap character in unix time string to a UInt8
+do {
+	withUnsafeBytes(of: &timeString) { bytes in
+		for byte in bytes {
+			timeHMACInput = [byte] + timeHMACInput
+		}
+	}
 }
 
-//probing how to complete HMAC operation
-print(try HMAC(key: time, variant: .sha1).authenticate(decodedBase32))
+var hashed = try HMAC(key: timeHMACInput, variant: .sha1).authenticate(decodedBase32)
 
+let offset : Int = Int(hashed[19]) & Int(0xF) //offset = value of the last nibble of the hashed array
+
+var testCode = Int32()
+
+testCode |= Int32(hashed[offset] & 0x7F) << 24
+testCode |= Int32(hashed[offset + 1]) << 16
+testCode |= Int32(hashed[offset + 2]) << 8
+testCode |= Int32(hashed[offset + 3])
+
+var output: String = String(testCode%1000000)
+
+if (output.characters.count <= 5) {
+	output.insert("0", at: output.startIndex)
+}
+
+output.insert(" ", at: output.index(output.startIndex, offsetBy: 3))
 
