@@ -31,8 +31,23 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="ut1-Tq-Ccx" id="Yum-oi-4nx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKu-EG-Ild">
+                                                    <rect key="frame" x="219" y="11" width="93" height="72"/>
+                                                    <state key="normal" title="Copy"/>
+                                                    <connections>
+                                                        <action selector="fieldButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OMK-tx-pnD"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gKu-EG-Ild" secondAttribute="trailing" constant="8" id="EW1-CI-6r8"/>
+                                                <constraint firstItem="gKu-EG-Ild" firstAttribute="leading" secondItem="Yum-oi-4nx" secondAttribute="leading" constant="219" id="Ve2-Vo-MwT"/>
+                                                <constraint firstAttribute="bottom" secondItem="gKu-EG-Ild" secondAttribute="bottom" constant="10" id="kHO-I0-tTL"/>
+                                                <constraint firstItem="gKu-EG-Ild" firstAttribute="top" secondItem="Yum-oi-4nx" secondAttribute="top" constant="11" id="yli-4g-d8s"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,7 +102,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="240" text="Shared Secret:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMk-Xt-WBX">
-                                <rect key="frame" x="20" y="137" width="281" height="27.5"/>
+                                <rect key="frame" x="20" y="137" width="281" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,7 +117,6 @@
                             <constraint firstItem="bDX-4K-JBX" firstAttribute="top" secondItem="ebj-fV-954" secondAttribute="bottom" constant="157.5" id="MES-R3-8rJ"/>
                             <constraint firstItem="ebj-fV-954" firstAttribute="leading" secondItem="Jg4-vg-QxU" secondAttribute="leading" constant="4" id="VZA-tY-oW0"/>
                             <constraint firstItem="ebj-fV-954" firstAttribute="top" secondItem="OMk-Xt-WBX" secondAttribute="bottom" constant="33.5" id="Xgx-jX-E1S"/>
-                            <constraint firstItem="ebj-fV-954" firstAttribute="top" secondItem="OMk-Xt-WBX" secondAttribute="bottom" constant="61" id="bA1-kD-iAM"/>
                             <constraint firstItem="vYB-aP-ARk" firstAttribute="top" secondItem="bDX-4K-JBX" secondAttribute="bottom" constant="110" id="efI-LS-Gdn"/>
                             <constraint firstItem="OMk-Xt-WBX" firstAttribute="leading" secondItem="Jg4-vg-QxU" secondAttribute="leading" constant="20" id="k9S-i1-RQL"/>
                             <constraint firstAttribute="trailing" secondItem="OMk-Xt-WBX" secondAttribute="trailing" constant="19" id="qQi-E0-3ML"/>

@@ -57,7 +57,7 @@ class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	var tableArray : [String] = ["Code: \t", "Time Remaining: \t"]
 	
 	var base32Inputkey = String()
-
+	
 	//MARK: Properties
 	
 	//MARK: Functions
@@ -143,7 +143,7 @@ class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		return output
 		
 	}
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -179,8 +179,24 @@ class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
 	//MARK: Actions
 	
-
+	@IBAction func fieldButton(_: Any) {
+		
+		UIPasteboard.general.string = authenticate(key: base32Inputkey)
+		showAlertButtonTapped()
+		
+	}
 	
+	@IBAction func showAlertButtonTapped() {
+		
+		// create the alert
+		let alert = UIAlertController(title: "COPIED!", message: "", preferredStyle: UIAlertControllerStyle.alert)
+		
+		// add an action (button)
+		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+		
+		// show the alert
+		self.present(alert, animated: true, completion: nil)
+	}
 	
 	
 	//	override func viewDidAppear(_ animated: Bool) {
