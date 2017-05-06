@@ -2,13 +2,13 @@
 //	codeVC.swift
 //  TwoFactorAuthentication
 //
-//  Created by   on
-//  Copyright © 2017  . All rights reserved.
+//  Created by Ethan McAuliffe
+//  Copyright © 2017. All rights reserved.
 //
 
 import UIKit
 import CryptoSwift
-var tableArray : [String] = ["Code: \t", "Time Remaining: \t"]
+
 
 extension String {
 	
@@ -54,7 +54,9 @@ extension UInt64 {
 
 class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
-	var base32Inputkey : String = "HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ"
+	var tableArray : [String] = ["Code: \t", "Time Remaining: \t"]
+	
+	var base32Inputkey = String()
 
 	//MARK: Properties
 	
@@ -150,7 +152,7 @@ class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		// Do any additional setup after loading the view, typically from a nib.
 		let twoFactorCode = authenticate(key: base32Inputkey)
 		tableArray[0] += (twoFactorCode)
-		tableArray[1] += (String(Int(Date().timeIntervalSince1970) % 30) + "s")
+		tableArray[1] += (String(30 - Int(Date().timeIntervalSince1970) % 30) + "s")
 		
 		
 	}

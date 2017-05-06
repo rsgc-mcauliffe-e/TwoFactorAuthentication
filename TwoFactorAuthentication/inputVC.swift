@@ -35,9 +35,23 @@ class inputVC: UIViewController {
 	*/
 	@IBAction func enterButton(_: Any) {
 		let myVC = storyboard?.instantiateViewController(withIdentifier: "Code View") as! codeVC
-		if sharedSecretKey.text != ""{
+		if (sharedSecretKey.text?.characters.count)! % 16 == 0 && (sharedSecretKey.text?.characters.count)! != 0{
 			myVC.base32Inputkey = sharedSecretKey.text!
+		} else {
+			showAlertButtonTapped()
 		}
+	}
+	
+	@IBAction func showAlertButtonTapped() {
+		
+		// create the alert
+		let alert = UIAlertController(title: "ERROR", message: "Code must have \n a multiple of 16 characters", preferredStyle: UIAlertControllerStyle.alert)
+		
+		// add an action (button)
+		alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+		
+		// show the alert
+		self.present(alert, animated: true, completion: nil)
 	}
 
 }
