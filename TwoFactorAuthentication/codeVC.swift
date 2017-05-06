@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//	codeVC.swift
 //  TwoFactorAuthentication
 //
 //  Created by   on
@@ -49,12 +49,13 @@ extension UInt64 {
 	}
 }
 
-var base32Inputkey : String = "HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ"
 
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
+	var base32Inputkey : String = "HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ"
+
 	//MARK: Properties
 	
 	//MARK: Functions
