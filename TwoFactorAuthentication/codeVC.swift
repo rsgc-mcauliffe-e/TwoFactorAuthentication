@@ -197,19 +197,6 @@ class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		// show the alert
 		self.present(alert, animated: true, completion: nil)
 	}
-	
-	
-	//	override func viewDidAppear(_ animated: Bool) {
-	//
-	//		super.viewDidAppear(true)
-	//		while(true){
-	//			let twoFactorCode = authenticate(key: base32key)
-	//			tableArray[0] = (twoFactorCode)
-	//			tableArray[1] = (String(Int(Date().timeIntervalSince1970) % 30))
-	//		}
-	//	}
-	
-	
 }
 
 
