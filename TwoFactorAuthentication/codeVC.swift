@@ -5,10 +5,8 @@
 //  Created by Ethan McAuliffe
 //  Copyright © 2017. All rights reserved.
 //
-
 import UIKit
 import CryptoSwift
-
 
 extension String {
 	
@@ -48,8 +46,6 @@ extension UInt64 {
 		return result
 	}
 }
-
-
 
 
 class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -198,5 +194,3 @@ class codeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		self.present(alert, animated: true, completion: nil)
 	}
 }
-
-
